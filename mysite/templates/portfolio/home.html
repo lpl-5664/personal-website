@@ -1,0 +1,18 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="block d-flex flex-column align-items-center justify-content-center">
+        <div class="photo mb-5">
+            <img src="{% static 'media/main-avatar.JPG' %}" alt="{% static 'media/backup-avatar.jpg' %}">
+        </div>
+        <div class="animation">
+            <h2>Hello, my name is Phi Long Lai. I am a <span id="animatedText"></span>.</h2>
+        </div>
+        <div class="rockets">
+            <img src="{% static 'media/rocket.png' %}" alt="">
+            <img src="{% static 'media/rocket.png' %}" alt="">
+            <img src="{% static 'media/rocket.png' %}" alt="">
+        </div>
+        <a class="btn btn-outline-light btn-lg" role="button" tabindex="0" href="mailto:llai1@ualberta.ca">SAY HELLO</a>
+    </div>
+{% endblock content %}
