@@ -1,7 +1,7 @@
 {% extends "portfolio/base.html" %}
 {% load static %}
 {% block content %}
-    <div class="block d-flex flex-column align-items-center justify-content-center">
+    <div class="vh-100 d-flex flex-column align-items-center justify-content-center">
         <div class="photo mb-5">
             <img src="{% static 'media/main-avatar.JPG' %}" alt="{% static 'media/backup-avatar.jpg' %}">
         </div>
@@ -15,14 +15,14 @@
         </div>
         <a class="btn btn-outline-light btn-lg" role="button" tabindex="0" href="mailto:llai1@ualberta.ca">SAY HELLO</a>
     </div>
-    <div class="about block d-flex flex-column justify-content-center align-items-center">
+    <div class="about vh-100 d-flex flex-column justify-content-center align-items-center">
         <h1 class="pt-5">About Me</h1>
 
         <div class="d-flex flex-row mt-5 mb-5">
             <div class="icons align-self-center">
                 <i class="fa-solid fa-graduation-cap"></i>
             </div>
-            <div class="desc col-sm-6 shadow-lg">
+            <div class="desc col-6">
                 <p>I am a new gradute from the University of Alberta with a strong passion for programming. 
                     I have an inquisitive nature and I am adept at learning cutting-edge technologies. 
                     I can teach myself necessary skills and work independently but I am also a team player and 
@@ -35,13 +35,13 @@
             <div class="icons align-self-center">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <div class="desc col-sm-6 shadow-lg">
+            <div class="desc col-6 shadow-lg">
                 <p><span style="font-size: 23px; font-weight: bold; color: blue;">#OpenToWork #SeekingOpportunities</span> <br>I am currently looking for full-time opportunities in Canada. Please reach out to me 
                     if you have any open positions that you think I would be a good fit.</p>
             </div>
         </div>
     </div>
-    <div class="skills block d-flex flex-column justify-content-center align-items-center">
+    <div class="skills vh-100 d-flex flex-column justify-content-center align-items-center">
         <h1>Technical Skills</h1>
 
         <div id="skillsCarousel" class="carousel slide carousel-fade w-100 h-50 mt-5" data-bs-ride="carousel">
