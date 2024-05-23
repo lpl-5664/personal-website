@@ -5,4 +5,5 @@ This is a self-started project to create a personal portfolio website using Djan
 ## TODO
 
 1, Design user-defined animation in CSS file  
-2, Design the "Projects" site
+2, Design the "Projects" site  
+3, Complete the "Web Frameworks" section by adding React and Node.js
