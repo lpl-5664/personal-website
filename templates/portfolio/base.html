@@ -14,54 +14,35 @@
 </head>
 <body>
     <header class="site-header">
-        <nav class="navbar navbar-expand-md text-bg-navbar fixed-top" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg fixed-top nav-custom" data-bs-theme="dark">
             <div class="container-fluid">
-                <a class="navbar-brand mr-4" href="/">My Website</a>
+                <span class="navbar-brand mr-4 fs-1" href="/">
+                  <img src="{% static 'favicon_io/favicon-32x32.png'%}" alt="Logo" width="40" height="40" class="d-inline-block align-text-bottom">
+                  Phi Long Lai
+                </span>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link {% if active_tab == 'home' %}active{% endif %}" 
+                        aria-current="page" href="{% url 'home' %}">Home</a>
                       </li>
                       <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="{% url 'projects' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Projects
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li>
-                            <a class="dropdown-item" href="https://github.com/lpl-5664/DeepSORT-tracking">
-                              DeepSORT Tracking
-                            </a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="https://black-plant-0cb93ad0f.5.azurestaticapps.net">
-                              Language Translation Web App
-                            </a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item disabled" href="#">
-                              Transformer for Language Translation
-                            </a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="https://github.com/CMPUT301F20T32/BookIt">
-                              BookIt Mobile App
-                            </a>
-                          </li>
-                        </ul>
+                        <a class="nav-link {% if active_tab == 'projects' %}active{% endif %}"
+                        aria-current="page" href="{% url 'projects' %}">Projects</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{% static 'media/philonglai-resume.pdf' %}">Resume</a>
+                        <a class="nav-link" aria-label="Resume" href="{% static 'media/philonglai-resume.pdf' %}">Resume</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="https://www.linkedin.com/in/long-lai-454877180/">LinkedIn</a>
+                        <a class="nav-link" aria-label="LinkedIn" href="https://www.linkedin.com/in/long-lai-454877180/">LinkedIn</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/lpl-5664">GitHub</a>
+                        <a class="nav-link" aria-label="GitHub" href="https://github.com/lpl-5664">GitHub</a>
                       </li>
                     </ul>
                 </div>
@@ -73,38 +54,41 @@
       {% block content %}{% endblock %}
     </main>
     
-    <footer class="text-bg-footer pt-2">
-      <div class="container text-start">
-        <div class="row text-start">
-          <div class="col-auto mx-auto mt-3">
-            <h5 class="text-uppercase font-weight-bold">Phone</h5>
+    <footer class="footer-container">
+      <div class="container content text-start">
+        <div class="row align-items-center">
+          <div class="footer-info col-auto mx-auto">
+            <p class="text-uppercase font-weight-bold">Phone</p>
             <p>
               <i class="fa-solid fa-phone"></i>
               <span>: (+1) 780 695-6610</span>
             </p>
           </div>
-          <div class="col-auto mx-auto mt-3">
-            <h5 class="text-uppercase font-weight-bold">Email</h5>
+          <div class="footer-info col-auto mx-auto">
+            <p class="text-uppercase font-weight-bold">Email</p>
             <p>
               <i class="fa-solid fa-envelope"></i>
               <span>: llai1@ualberta.ca</span>
             </p>
           </div>
-          <div class="col-auto mx-auto mt-3">
-            <h5 class="text-uppercase font-weight-bold">Follow Me</h5>
+          <div class="footer-info col-auto mx-auto">
+            <p class="text-uppercase font-weight-bold">Follow Me</p>
             <div class="list-unstyled list-inline">
-              <a class="list-inline-item btn-floating" style="font-size: 18px;" href="https://www.linkedin.com/in/long-lai-454877180/">
+              <a class="list-inline-item btn-floating" style="font-size: 18px;" aria-label="LinkedIn" 
+              href="https://www.linkedin.com/in/long-lai-454877180/">
                 <i class="fa-brands fa-linkedin-in"></i>
               </a>
-              <a class="list-inline-item btn-floating" style="font-size: 18px;" href="https://github.com/lpl-5664">
+              <a class="list-inline-item btn-floating" style="font-size: 18px;" aria-label="GitHub" 
+              href="https://github.com/lpl-5664">
                 <i class="fa-brands fa-github"></i>
               </a>
-              <a class="list-inline-item btn-floating" style="font-size: 18px;" href="https://www.kaggle.com/philonglai">
+              <a class="list-inline-item btn-floating" style="font-size: 18px;" aria-label="Kaggle" 
+              href="https://www.kaggle.com/philonglai">
                 <i class="fa-brands fa-kaggle"></i>
               </a>
             </div>
           </div>
-          <div class="col-auto mx-auto mt-3 align-self-center">
+          <div class="col-auto mx-auto align-self-center">
             <span>&copy 2024 All Rights Reserved by Phi Long Lai</span>
           </div>
         </div>
@@ -113,5 +97,10 @@
 
     <script src="{% static 'main.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    </script>
+    
 </body>
 </html>
