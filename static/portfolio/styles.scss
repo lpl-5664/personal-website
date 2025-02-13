@@ -1,0 +1,541 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+$backgroundColor: rgb(0, 0, 0);
+// $mainColor: rgb(135, 206, 235);
+$mainColor: #6C48C5;
+$lineColor: rgb(255, 105, 180);
+$secondLineColor: rgb(255, 253, 181);
+$primaryColor: rgb(90, 7, 148); 
+$secondaryColor: rgb(0, 255, 255);
+$textColor: rgb(255, 255, 255);
+$modalHeaderColor: #243642;
+$modalContentColor: #387478;
+$modalBorderColor: #E2F1E7;
+$footerColor: rgb(38, 38, 38);
+
+$breakpoint: 700px;
+$animationSpeed: 40s;
+
+$slideCount: 18;
+$angleStep: calc(360deg / $slideCount);
+
+$skewAngle: 30deg;
+$scaleRate: 0.3;
+
+// Animation
+
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-150px * $slideCount)); }
+}
+
+@keyframes rotate360 {
+    0% { transform: rotateX(-5deg) rotateY(0deg); }
+    100% { transform: rotateX(-5deg) rotateY(-360deg); }
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    background-color: $backgroundColor;
+    color: $textColor;
+    overflow-y: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+// 1. Header (Navbar) Design
+header {
+    nav {
+        top: 0;
+        z-index: 1;
+        background-color: $backgroundColor;
+        color: $textColor;
+    }
+}
+
+
+// 2. Desgin for the pages' content
+.content {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+// a. Homepage
+// Intro section
+.intro {
+    margin-top: 18%;
+
+    @media screen and (max-width: 576px) {
+        margin-top: 40%;
+    }
+
+    @media screen and (max-width: 480px) {
+        margin-top: 50%;
+    }
+}
+
+.animation {
+    h1 {
+        span {
+            color: $primaryColor;
+        }
+    }
+}
+
+.btn-custom {
+    border-radius: 40px;
+
+    &:hover {
+        color: $textColor !important;
+        background-color: $primaryColor !important;
+        transform: scale(1.03);
+        text-shadow: 2px 2px 5px rgba($backgroundColor, 0.7);
+        box-shadow: 2px 2px 5px rgba($textColor, 0.7);
+    }
+}
+
+// About Me section
+.about {
+    margin-top: 10%;
+    padding-top: 10%;
+}
+
+.project-paragraph, .suncor-paragraph, .note-paragraph {
+    text-wrap: wrap;
+    margin-top: 15%;
+}
+
+.profile-img, .code-img, .suncor-img {
+    max-width: 100%;
+    object-fit: cover;
+
+    &.profile-img {
+        max-height: 400px;
+    }
+
+    &.code-img, .suncor-img {
+        max-height: 200px;
+    }
+}
+
+// Experience section
+.timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 2rem;
+    margin: 5% auto;
+    max-width: 1300px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        background: linear-gradient(
+            to bottom,
+            rgba($lineColor, 0) 0%,
+            $lineColor 3%,
+            $lineColor 97%,
+            rgba($lineColor, 0) 100%
+        );
+        right: 40px;
+        top: 0;
+    }
+
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    @media screen and (min-width: $breakpoint) {
+        padding: 4rem;
+        &::before {
+            left: calc(50% - 1px);
+            right: auto;
+        }
+    }
+}
+
+.milestone {
+    position: relative;
+    padding: 1rem;
+    border: 2px solid;
+    margin: 1rem 3rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+
+    .btn-custom {
+        margin-top: 1rem;
+        align-self: flex-end;
+    }
+
+    @media screen and (min-width: $breakpoint) {
+        width: 44%;
+        margin: 1rem;
+    }
+}
+
+.milestone.left {
+    align-self: flex-start;
+    margin-left: 1rem;
+    margin-right: auto;
+    border-image: linear-gradient(to right, $mainColor 0%, $lineColor 100%);
+    border-image-slice: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: calc(50% - 5px);
+        right: -10px;
+        border-style: solid;
+        border-color: $lineColor $lineColor transparent transparent;
+        border-width: 10px;
+        transform: rotate(45deg);
+    }
+
+    @media screen and (max-width: $breakpoint) {
+        align-self: flex-end;
+        margin-right: 3rem;
+        margin-left: auto;
+    }
+}
+
+.milestone.right {
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: 1rem;
+    border-image: linear-gradient(to right, $lineColor 0%, $mainColor 100%);
+    border-image-slice: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: calc(50% - 5px);
+        left: -10px;
+        border-style: solid;
+        border-color: transparent transparent $lineColor $lineColor;
+        border-width: 10px;
+        transform: rotate(45deg);
+    }
+
+    @media screen and (max-width: $breakpoint) {
+        align-self: flex-end;
+        margin-right: 3rem;
+        margin-left: auto;
+        border-image: linear-gradient(to right, $mainColor 0%, $lineColor 100%);
+        border-image-slice: 1;
+
+        &::before {
+            left: auto;
+            right: -10px;
+            border-color: $lineColor $lineColor transparent transparent;
+        }
+    }
+}
+
+.modal-content {
+    background: linear-gradient(180deg, $backgroundColor 0%, $primaryColor 50%, $mainColor 100%);
+    color: $textColor;
+    border: 1px solid $secondaryColor;
+    border-radius: 8px;
+    text-shadow: 2px 2px 5px rgba($backgroundColor, 0.7);
+
+    .modal-header {
+        color: $textColor;
+        border-bottom: none;
+    }
+}
+
+.year {
+    position: relative;
+    text-align: center;
+    max-width: 150px;
+    margin: 0 48px 0 auto;
+    font-size: 1.8rem;
+    background-color: $footerColor;
+    line-height: 1;
+    border: 2px solid $lineColor;
+    border-image: none;
+    padding: .5rem 1rem 1rem;
+    z-index: 1;
+
+    @media screen and (min-width: $breakpoint) {
+        width: 44%;
+        text-align: center;
+        border-radius: 50%;
+        margin: 0 auto;
+    }
+}
+
+// Skills section
+.skills {
+    background: $footerColor;
+    position: relative;
+    perspective: 1000px;
+    box-shadow: -10px -10px 20px 5px rgba($mainColor, .25), 10px 10px 20px 5px rgba($lineColor, .25);
+    height: 150px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    .logo-carousel {
+        position: relative;
+        width: 80%;
+        height: 100px;
+        margin: auto;
+        transform-style: preserve-3d;
+        animation: rotate360 $animationSpeed infinite linear;
+
+        .logo-carousel-item {
+            position: absolute;
+            height: 50px;
+            max-width: 175px;
+            top: 50%;
+            left: 50%;
+            display: flex;
+            transform: translate(-50%, -50%) rotateY(calc(var(--i) * #{$angleStep})) translateZ(30vw); // Adjust Z-axis spacing
+            transform-origin: center;
+            transition: transform 0.5s ease;
+            backface-visibility: hidden;
+    
+            img {
+                object-fit: contain;
+                height: 50px;
+                margin: auto;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        height: 175px;
+    }
+
+    @media screen and (max-width: $breakpoint) {
+        height: 100px;
+        width: 100%;
+        margin: 3rem 0;
+        background: $backgroundColor;
+        box-shadow: none;
+
+        .logo-carousel {
+            animation: scroll $animationSpeed linear infinite;
+            transform-style: flat;
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+            width: calc(150px * $slideCount * 2);
+
+            .logo-carousel-item {
+                flex: 0 0 auto;
+                position: relative;
+                transform: none;
+                margin: auto;
+                top: auto;
+                left: auto;
+                width: 150px;
+                //display: inline-block;
+            }
+        }
+    }
+}
+
+@for $i from 0 through ($slideCount - 1) {
+    .logo-carousel-item:nth-child(#{$i + 1}) {
+      --i: #{$i};
+    }
+}
+
+// Outro section
+.outro {
+    margin-top: 15%;
+    margin-bottom: 5%;
+    display: flex; 
+
+    .outro-header {
+        width: 60%;
+    }
+
+    .outro-body {
+        width: 40%;
+        margin-top: 20%;
+        
+        a:hover,
+        a:hover i {
+            transform: scale(1.03);
+            text-shadow: 2px 2px 5px rgba($textColor, 0.7);
+        }
+    }
+
+    @media screen and (max-width: 1252px) {
+        flex-direction: column;
+
+        .outro-body {
+            margin: 5% auto;
+            width: 65%;
+        }
+    }
+}
+
+.perspective-text {
+    font-size: clamp(32px, 5vw, 58px);
+    font-weight: 900;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+
+    --lineHeight: clamp(28px, 4.5vw, 50px);
+
+    .perspective-line {
+        height: var(--lineHeight);
+        width: max-content;
+        transform-origin: left;
+        overflow: hidden;
+        position: relative;
+        left: calc(var(--i) * var(--lineHeight) * tan($skewAngle));
+
+        p {
+            margin: 0;
+            height: var(--lineHeight);
+            line-height: var(--lineHeight);
+            transition: all  0.5s ease-in-out;
+        }
+
+        &:nth-child(even) {
+            transform: skew(0deg, -$skewAngle) scaleY(1 + $scaleRate);
+        }
+
+        &:nth-child(odd) {
+            transform: skew($skewAngle * 2, -$skewAngle) scaleY(1 - $scaleRate);
+        }
+    }
+
+    &:hover p {
+        transform: translate(0, calc(-1 * var(--lineHeight)));
+    }
+}
+
+@for $i from 0 through 4 {
+    .perspective-line:nth-of-type(#{$i + 1}) {
+        --i: #{$i + 1};
+    }
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: #{$secondaryColor};
+    --bs-tooltip-color: #{$primaryColor};
+}
+
+// b. Projects page
+// Projects section
+.card-grid {
+    margin-top: 10%;
+
+    @media screen and (max-width: 810px) {
+        margin-top: 15%;
+    }
+
+    @media screen and (max-width: 548px) {
+        margin-top: 20%;
+    }
+
+    @media screen and (max-width: 390px) {
+        margin-top: 30%;
+    }
+}
+
+.row {
+    height: 40%;
+
+    .col {
+        height: 400px;
+    }
+}
+
+.card {
+    max-width: 300px;
+    color: $textColor;
+    //background-color: $backgroundColor;
+    text-shadow: 2px 2px 5px rgba($backgroundColor, 0.7);
+
+    &:hover {
+        transform: scale(1.01);
+        outline: 1px solid $secondaryColor;
+    }
+
+    @media screen and (min-width: 1200px) {
+        // 3D transformation
+        transform: perspective(100px) rotateX(0deg) rotateY(-2deg) rotateZ(0deg);
+        transition: transform 0.3s ease;
+        transform-style: preserve-3d;
+
+        &:hover {
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        &:hover {
+            box-shadow: 7px 7px 5px rgba($secondaryColor, 0.7);
+        }
+    }
+
+    img {
+        height: 40%;
+        width: 100%;
+    }
+
+    .card-body {
+        overflow: auto;
+        background-color: $primaryColor;
+
+        &::-webkit-scrollbar {
+            width: 5px;
+            height: 100%;
+            background-color: $primaryColor;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $mainColor;
+            border-radius: 5px;
+        }
+
+        .card-text{
+            a {
+                color: $textColor;
+                i {
+                    color: $textColor;
+                    text-shadow: none;
+                }
+    
+                &:hover,
+                &:hover i {
+                    color: $secondaryColor;
+                    transform: scale(1.03);
+                }
+            }
+        }
+    }
+}
+
+// 3. Footer Desgin
+.footer-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    background-color: $footerColor;
+    color: $textColor;
+}
+
+.footer-info p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.fa-solid, .fa-brands {
+    color: $secondaryColor;
+}

@@ -30,3 +30,41 @@ function deleteText() {
 }
 
 typeText()
+
+document.addEventListener('DOMContentLoaded', () => {
+    const perspectiveLines = document.querySelectorAll('.perspective-line');
+
+    if (perspectiveLines.length > 0) {
+        const updateWidths = () => {
+            let maxWidth = 0;
+
+            perspectiveLines.forEach(line => {
+                const paragraphs = line.querySelectorAll('p');
+                paragraphs.forEach(p => {
+                    const textWidth = Math.ceil(p.scrollWidth);
+                    if (textWidth > maxWidth) {
+                        maxWidth = textWidth;
+                    }
+                });
+            });
+
+            perspectiveLines.forEach(line => {
+                line.style.width = `${maxWidth}px`;
+            });
+        }
+
+        if (document.fonts) {
+            document.fonts.ready.then(updateWidths); // Wait for fonts to load
+        } else {
+            updateWidths(); // Fallback for older browsers
+        }
+
+        let resizeTimeout;
+        window.addEventListener('onresize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                updateWidths(); // Debounce to improve performance
+            }, 100);
+        });
+    }
+});

@@ -2,22 +2,130 @@
 {% load static %}
 {% block content %}
     
+    <div class="card-grid mb-3">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
+            <div class="col">
+                <div class="card h-100 mx-auto">
+                    <img class="card-img-top" src="{% static 'media/lang_translate.gif' %}" alt="Language Translation">
+                    <div class="card-body">
+                        <h5 class="card-title">Language Translation Web Application</h5>
+                        <p class="card-text">A full-stack web application enabling real-time language 
+                            translation, built with Django (backend), React (frontend), and REST APIs 
+                            for communication. The platform integrates a custom-built Transformer-based 
+                            translation engine, allowing users to translate text seamlessly between 
+                            multiple languages with high accuracy. The application is deployed on Azure 
+                            with CI/CD pipelines for automated deployment.
+                        </p>
+                        <p class="card-text">
+                            <strong>Technologies:</strong> Python, React, Django, Azure, Git, HTML, CSS, JavaScript
+                        </p>
 
-    <!-- <div class="skills block container-fluid">
-        <h1 class="mt-3">My Skills</h1>
-        
-        <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar bg-success" style="width: 25%"></div>
+                        <p class="card-text">
+                            <a href="https://black-plant-0cb93ad0f.5.azurestaticapps.net/" class="btn" 
+                            target="_blank" rel="noopener noreferrer" data-bs-toggle="tooltip" 
+                            data-bs-placement="bottom" data-bs-title="View Live">
+                                <i class="fa-solid fa-globe"></i>
+                                <span class="d-none d-md-inline">View Live</span>
+                            </a>
+                            <a href="https://github.com/lpl-5664/lang-translator-web" class="btn"
+                            target="_blank" rel="noopener noreferrer" data-bs-toggle="tooltip" 
+                            data-bs-placement="bottom" data-bs-title="View Code">
+                                <i class="fa-solid fa-code"></i>
+                                <span class="d-none d-md-inline">View Code</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 mx-auto">
+                    <img class="card-img-top" src="{% static 'media/nlp.gif' %}" alt="Transformer Model">
+                    <div class="card-body">
+                        <h5 class="card-title">Transformer Neural Machine Translation</h5>
+                        <p class="card-text">A deep learning-based translation engine developed using 
+                            Python and TensorFlow, leveraging a Transformer model similar to Google's 
+                            neural machine translation system. This engine processes input text, applies 
+                            attention mechanisms to understand word relationships, and generates 
+                            context-aware translations. Designed for high efficiency, it powers the 
+                            Language Translation Web Application by serving as its core translation component.
+                        </p>
+                        <p class="card-text">
+                            <strong>Technologies:</strong> Python, Tensorflow
+                        </p>
+                        <p class="card-text">
+                            <a href="https://github.com/lpl-5664/lang-translator" class="btn" 
+                            target="_blank" rel="noopener noreferrer" data-bs-toggle="tooltip" 
+                            data-bs-placement="bottom" data-bs-title="View Code">
+                                <i class="fa-solid fa-code"></i>
+                                <span class="d-none d-md-inline">View Code</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 mx-auto">
+                    <img class="card-img-top" src="{% static 'media/object_tracking.gif' %}" alt="Multi-object Tracker">
+                    <div class="card-body">
+                        <h5 class="card-title">Multi-Object Tracker</h5>
+                        <p class="card-text">A computer vision project implementing a Multi-Object 
+                            Tracking (MOT) system using deep learning. Built with YOLOv4 for real-time 
+                            object detection and a Kalman filter for predictive tracking, the 
+                            system identifies and tracks multiple objects in video frames with high 
+                            accuracy. The project utilizes TensorFlow and OpenCV for video preprocessing, 
+                            making it suitable for surveillance, autonomous vehicles, and smart traffic 
+                            systems.
+                        </p>
+                        <p class="card-text">
+                            <strong>Technologies:</strong> Python, MATLAB, Tensorflow, OpenCV
+                        </p>
+                        <p class="card-text">
+                            <a href="https://github.com/lpl-5664/DeepSORT-tracking/tree/main/results" class="btn"
+                            target="_blank" rel="noopener noreferrer" data-bs-toggle="tooltip" 
+                            data-bs-placement="bottom" data-bs-title="View Video">
+                                <i class="fa-solid fa-video"></i>
+                                <span class="d-none d-md-inline">View Video</span>
+                            </a>
+                            <a href="https://github.com/lpl-5664/DeepSORT-tracking" class="btn"
+                            target="_blank" rel="noopener noreferrer" data-bs-toggle="tooltip" 
+                            data-bs-placement="bottom" data-bs-title="View Code">
+                                <i class="fa-solid fa-code"></i>
+                                <span class="d-none d-md-inline">View Code</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 mx-auto">
+                    <img class="card-img-top" src="{% static 'media/bookIt.gif' %}" alt="BookIt">
+                    <div class="card-body">
+                        <h5 class="card-title">Book Exchange Mobile Application</h5>
+                        <p class="card-text">A mobile application designed for book exchange between 
+                            users, developed using Java on Android Studio with Firebase as the 
+                            backend database. The app enables users to list books, browse available 
+                            collections, and arrange exchanges. It follows Scrum & Agile methodologies, 
+                            incorporates unit testing for performance reliability, and employs UML 
+                            diagrams for system design.
+                        </p>
+                        <p class="card-text">
+                            <strong>Technologies:</strong> Java, Android, HTML, CSS, Firebase
+                        </p>
+                        <p class="card-text">
+                            <a href="https://github.com/CMPUT301F20T32/BookIt" class="btn"
+                            target="_blank" rel="noopener noreferrer" data-bs-toggle="tooltip" 
+                            data-bs-placement="bottom" data-bs-title="View Code">
+                                <i class="fa-solid fa-code"></i>
+                                <span class="d-none d-md-inline">View Code</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="progress" role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar bg-info" style="width: 50%"></div>
-        </div>
-        <div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar bg-warning" style="width: 75%"></div>
-        </div>
-        <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar bg-danger" style="width: 100%"></div>
-        </div>
-    </div> -->
+    </div>
     
 {% endblock content %}
