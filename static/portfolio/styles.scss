@@ -105,22 +105,50 @@ header {
     padding-top: 10%;
 }
 
-.project-paragraph, .suncor-paragraph, .note-paragraph {
+.project-paragraph{
     text-wrap: wrap;
-    margin-top: 15%;
+    margin-top: 18%;
+    text-align: start;
+
+    @media screen and (max-width: 768px) {
+        text-align: center;
+        margin-top: 2%;
+        justify-content: center;
+    }
 }
 
-.profile-img, .code-img, .suncor-img {
+.suncor-paragraph {
+    text-wrap: wrap;
+    margin-top: 15%;
+    text-align: end;
+
+    @media screen and (max-width: 768px) {
+        text-align: center;
+        margin-top: 2%;
+        justify-content: center;
+    }
+}
+
+.note-paragraph {
+    text-wrap: wrap;
+    text-align: center;
+}
+
+.profile-img, .code-img, .suncor-img, .cat-img {
     max-width: 100%;
     object-fit: cover;
+}
 
-    &.profile-img {
-        max-height: 400px;
-    }
+.profile-img {
+    max-height: 400px;
+}
 
-    &.code-img, .suncor-img {
-        max-height: 200px;
-    }
+.code-img, .cat-img {
+    max-height: 250px;
+}
+
+.suncor-img {
+    max-height: 200px;
 }
 
 // Experience section
