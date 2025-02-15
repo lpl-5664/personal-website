@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    <div id="about-me" class="about content d-flex-column align-self-center d-none d-md-block">
+    <div id="about-me" class="about content d-flex flex-column align-self-center">
         <div class="row mb-5">
             <div class="col-12">
                 <h2 class="text-center fst-italic fw-light">"Driven by Curiosity, Guided by Impact"</h2>
@@ -50,7 +50,7 @@
             </div>
         </div>
 
-        <div class="row my-4">
+        <!-- <div class="row my-4">
             <div class="col-7">
                 <div class="text-start">
                     <p class="project-paragraph">Outside of formal roles, I've taken the initiative to build projects 
@@ -58,7 +58,7 @@
                         translation app, utilizing React for an interactive front-end, Django for the back-end, and Azure 
                         for deployment. This project taught me how to integrate RESTful APIs, ensure responsive design, 
                         and deploy applications using CI/CD pipelines with GitHub Actions. I've also built and deployed 
-                        my own personal website, further honing my skills in Django, Bootstrap, and modern web development 
+                        my own personal website, further honing my skills in Django, React, and modern web development 
                         best practices. These projects reflect my commitment to continuous learning and a proactive approach 
                         to staying up-to-date with industry trends.</p>
                 </div>
@@ -80,7 +80,8 @@
                         enhanced operational efficiency. My work also emphasized security, as I implemented user authentication, 
                         role-based access control, and SQL injection prevention to protect critical company data. Collaborating 
                         with a multidisciplinary team, I refined my technical and interpersonal skills, proving that I can make 
-                        a tangible impact in complex, fast-paced environments.</p>
+                        a tangible impact in complex, fast-paced environments.
+                    </p>
                 </div>
             </div>
         </div>
@@ -91,12 +92,54 @@
                     spotting bugs (or maybe just chasing them) and has taught me the art of patience — especially when debugging.</p>
             </div>
             <div class="col-6 text-center">
-                <img class="image-fluid cat-img" src="" alt="This is my cat, Sirius">
+                <img class="image-fluid cat-img" src="{% static 'media/sirius.jpg' %}" alt="This is my cat, Sirius">
+            </div>
+        </div> -->
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col-10 col-md-7 mx-auto order-2 order-md-1">
+                <p class="project-paragraph">Outside of formal roles, I've taken the initiative to build projects 
+                    that challenge me to stay on the cutting edge of technology. I've developed a custom language 
+                    translation app, utilizing React for an interactive front-end, Django for the back-end, and Azure 
+                    for deployment. This project taught me how to integrate RESTful APIs, ensure responsive design, 
+                    and deploy applications using CI/CD pipelines with GitHub Actions. I've also built and deployed 
+                    my own personal website, further honing my skills in Django, React, and modern web development 
+                    best practices. These projects reflect my commitment to continuous learning and a proactive approach 
+                    to staying up-to-date with industry trends.
+                </p>
+            </div>
+
+            <div class="col-8 col-md-5 text-center mx-auto order-1 order-md-2">
+                <img class="img-fluid code-img" src="{% static 'media/code.jpg' %}" alt="Code">
+            </div>
+
+            <div class="col-8 col-md-5 text-center mx-auto order-3">
+                <img class="img-fluid suncor-img" src="{% static 'media/suncor.jpeg' %}" alt="Suncor">
+            </div>
+
+            <div class="col-10 col-md-7 mx-auto order-4">
+                <p class="suncor-paragraph">During my tenure at Suncor Energy, I had the opportunity to lead the development of a web application 
+                    that monitors real-time site data and provides actionable predictions. I played a pivotal role in 
+                    optimizing a decision-support system, boosting its calculation speed by 50% — a change that directly 
+                    enhanced operational efficiency. My work also emphasized security, as I implemented user authentication, 
+                    role-based access control, and SQL injection prevention to protect critical company data. Collaborating 
+                    with a multidisciplinary team, I refined my technical and interpersonal skills, proving that I can make 
+                    a tangible impact in complex, fast-paced environments.
+                </p>
+            </div>
+
+            <div class="col-8 col-md-6 text-center my-auto mx-auto order-last order-md-5">
+                <p class="note-paragraph">When I'm not coding, I'm being "supervised" by my cat, Sirius. He's an expert in 
+                    spotting bugs (or maybe just chasing them) and has taught me the art of patience — especially when debugging.</p>
+            </div>
+
+            <div class="col-8 col-md-6 text-center mx-auto order-5">
+                <img class="image-fluid cat-img" src="{% static 'media/sirius.jpg' %}" alt="This is my cat, Sirius">
             </div>
         </div>
     </div>
 
-    <div class="about content d-flex flex-column align-items-center align-self-center d-md-none">
+    <!-- <div class="about content d-flex flex-column align-items-center align-self-center d-md-none">
         <div class="col-12 mb-5">
             <h2 class="text-center fst-italic fw-light">"Driven by Curiosity, Guided by Impact"</h2>
         </div>
@@ -120,7 +163,7 @@
                 translation app, utilizing React for an interactive front-end, Django for the back-end, and Azure 
                 for deployment. This project taught me how to integrate RESTful APIs, ensure responsive design, 
                 and deploy applications using CI/CD pipelines with GitHub Actions. I've also built and deployed 
-                my own personal website, further honing my skills in Django, Bootstrap, and modern web development 
+                my own personal website, further honing my skills in Django, React, and modern web development 
                 best practices. These projects reflect my commitment to continuous learning and a proactive approach 
                 to staying up-to-date with industry trends.</p>
         </div>
@@ -147,7 +190,7 @@
             <p class="note-paragraph">When I'm not coding, I'm being "supervised" by my cat, Sirius. He's an expert in 
                 spotting bugs (or maybe just chasing them) and has taught me the art of patience — especially when debugging.</p>
         </div>
-    </div>
+    </div> -->
 
     <div class="experience content">
         <div class="timeline" id="timeline-container"></div>

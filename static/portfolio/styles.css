@@ -75,19 +75,51 @@ header nav {
   padding-top: 10%;
 }
 
-.project-paragraph, .suncor-paragraph, .note-paragraph {
+.project-paragraph {
   text-wrap: wrap;
-  margin-top: 15%;
+  margin-top: 18%;
+  text-align: start;
+}
+@media screen and (max-width: 768px) {
+  .project-paragraph {
+    text-align: center;
+    margin-top: 2%;
+    justify-content: center;
+  }
 }
 
-.profile-img, .code-img, .suncor-img {
+.suncor-paragraph {
+  text-wrap: wrap;
+  margin-top: 15%;
+  text-align: end;
+}
+@media screen and (max-width: 768px) {
+  .suncor-paragraph {
+    text-align: center;
+    margin-top: 2%;
+    justify-content: center;
+  }
+}
+
+.note-paragraph {
+  text-wrap: wrap;
+  text-align: center;
+}
+
+.profile-img, .code-img, .suncor-img, .cat-img {
   max-width: 100%;
   object-fit: cover;
 }
-.profile-img.profile-img, .code-img.profile-img, .suncor-img.profile-img {
+
+.profile-img {
   max-height: 400px;
 }
-.profile-img.code-img, .profile-img .suncor-img, .code-img.code-img, .code-img .suncor-img, .suncor-img.code-img, .suncor-img .suncor-img {
+
+.code-img, .cat-img {
+  max-height: 250px;
+}
+
+.suncor-img {
   max-height: 200px;
 }
 
